@@ -1,0 +1,77 @@
+/*Default Settings*/
+html{
+    background-color: #192231;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+/*Body Settings*/
+body{
+    background-color: #494E6B;
+    margin: auto;
+    min-height: 100%;
+    width: 100%;
+}
+
+/*Paragraph Styles*/
+p {
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: left;
+    margin: 50px 40px 0px 40px;
+}
+
+/*Navigation bar styles*/
+#mainBar li {
+    display: inline;
+    padding: 26px 20px 26px 20px;
+}
+
+nav {
+    background-color: #192231;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/*ID Selector*/
+#mainBar a {
+    padding: 8px;
+}
+
+a{
+    text-decoration: none; /*Text Property*/
+}
+
+/*Psuedo Styles*/
+a:link {
+     color: #ffffff;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #985E6D;
+}
+
+#active {
+    background-color: #985E6D;
+}
+
+#active a:hover {
+    color: #98878F;
+}
+
+/*Float Classes*/
+.floatRight{
+    float: right;
+    padding: 50px 200px 0px 10px;
+}
+
+.floatLeft{
+    float: left;
+    margin: 50px 20px 50px 50px;
+}

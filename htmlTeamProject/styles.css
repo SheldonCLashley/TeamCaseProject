@@ -24,7 +24,17 @@ p {
     color: whitesmoke;
     font-size: 20px;
     text-align: left;
-    margin: 50px 40px 0px 40px;
+    margin: 40px 40px 40px 40px;
+}
+
+/*Form Styles*/
+form {
+    color: whitesmoke;
+    margin: 40px 40px 40px 40px;
+}
+
+form input, form textarea {
+    color: black;
 }
 
 /*Navigation bar styles*/

@@ -18,6 +18,9 @@ body{
     min-height: 100%;
     width: 100%;
 }
+h1.whiteText{
+    color: white;
+}
 
 /*Paragraph Styles*/
 p {
@@ -94,4 +97,10 @@ a:hover {
 .floatLeft{
     float: left;
     margin: 40px 40px 40px 40px;
+}
+
+
+/*Input*/
+input, select{
+    color: black;
 }

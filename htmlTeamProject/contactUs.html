@@ -31,11 +31,11 @@
         <form method="POST">
           <h2>Contact Us</h2>
             <label>First Name:</label><br>
-            <input type="text" name="firstname" id="inputFirstName"/><br>
+            <input type="text" name="firstname" id="inputFirstName" required="required"/><br>
             <label>Last Name:</label><br>
-            <input type="text" name="lastname"/><br>
+            <input type="text" name="lastname" id="inputLastName" required="required"/><br>
             <label>Email:</label><br>
-            <input type="text" name="Email"/><br>
+            <input type="text" name="Email" id="inputEmail" required="required"/><br>
             <label>Message:</label><br>
             <textarea name="message" cols="50" rows="5"></textarea><br>
             <input type="submit" value="Submit" id="submit">
@@ -44,10 +44,19 @@
 
     <script>
       function submitForm() {
-        alert("Thank you! We will get back to you as soon as we can!")
+        if((document.getElementById("inputFirstName").value == "")  
+        && (document.getElementById("inputLastName").value =="") 
+        && document.getElementById("inputEmail").value == "")
+        {    
+            alert("Please input valid credentials");
+        }
+        else{
+            alert("Thank you! We will get back to you as soon as we can!");
+        }  
       }
-
+      
       document.getElementById("submit").addEventListener("click", submitForm, false);
+      
     </script>
 </body>
 </html>

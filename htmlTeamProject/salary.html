@@ -25,7 +25,9 @@
                 <li><a href="contactUs.html">Contact Us</a></li>
             </ul>
         </nav>
+
         <img class="floatRight" src="images/salary.jpg" alt="salary" />
+
         <p>
             One of the most alluring factors to a Computer Science degree is the salary.According to Glassdoor.Com,
             the average Salary for a software developer is $110,000 per year. While this may seem decent depending on
@@ -52,6 +54,38 @@
             velit viverra in. Sed vestibulum hendrerit imperdiet. Ut quis sagittis elit. Nunc fermentum neque eu nisi consectetur commodo. Sed euismod venenatis
             lacus non tempor. Etiam scelerisque metus eu turpis suscipit, non elementum ex ullamcorper. Nulla facilisi. Donec posuere consectetur convallis.
         </p>
+
+        <h1 class="whiteText">Salary Calculator</h1>
+
+        <form id="myForm" onsubmit="return false">
+                Please select your desired job<br>
+                <select name="job">
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Database Manager">Database Manager</option>
+                    <option value="IT Director">IT Director</option>
+                    <option value="Web Developer">Web Developer</option>
+                </select><br>
+                Please input your hourly pay: <br>
+                <input type="number" name="salary" id="money"><br>
+                Please input hours worked per week: <br>
+                <input type="number" name="workHours" id="workHours"><br>
+                <input type="submit" value="Submit" id="submit"><br><br>
+                This is your total salary:<br>
+                <input type="text" name="totalMoney" id="totalMoney">
+        </form>    
     </div>
+
+    <script type="text/javascript" language="javascript">
+        function submitForm(){
+           var salary = document.getElementById("money").value;
+           var workHours = document.getElementById("workHours").value;
+        
+           var money = salary * workHours * 12 * 4;
+           
+           document.getElementById("totalMoney").value = money;
+        }
+
+         document.getElementById("submit").addEventListener("click", submitForm, false)
+    </script>
 </body>
 </html>

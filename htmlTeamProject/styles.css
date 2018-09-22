@@ -22,6 +22,11 @@ h1.whiteText{
     color: white;
 }
 
+h1{
+    Color: white;
+    margin-left: 40px;
+}
+
 /*Paragraph Styles*/
 p {
     color: whitesmoke;
@@ -38,6 +43,10 @@ form {
 
 form input, form textarea {
     color: black;
+}
+
+#arrayCalc #averageArray, #clearArray{
+    margin-bottom: 10px;
 }
 
 /*Navigation bar styles*/
@@ -104,3 +113,4 @@ a:hover {
 input, select{
     color: black;
 }
+

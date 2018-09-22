@@ -72,7 +72,7 @@
 
             <p> The following demo shoes something that you could build with code, it calculates a rolling average as you add values to an array.</p>
 
-            <form>
+            <form id="arrayCalc">
                 <label>Input Value:</label>
                 <input type="number" name="newValue" id="newValue"><br>
 
@@ -80,12 +80,12 @@
                 <input type="button" name="clearArray" id="clearArray" value="Clear Array"><br>
 
                 <label>Array Values:</label>
-                <input type="text" name="arrayList" id="arrayList", value="Array is Empty"><br>
+                <input type="text" name="arrayList" id="arrayList", value="Array is Empty" readonly><br>
 
-                <input type="button" name="averageArray" id="averageArray" value="Calcualte Array Average" readonly><br>
+                <input type="button" name="averageArray" id="averageArray" value="Calculate Array Average"><br>
 
                 <label>Avarage Value:</label>
-                <input type="number" name="average" id="average" readonly>
+                <input type="text" name="average" id="average" readonly>
             </form>
         </div>
     </div>
@@ -94,24 +94,20 @@
     <script type = "text/javascript" language="javascript">
         function addArray(){
             var sum = 0;
-
             for (var i = 0; i < array.length; i++){
-                sum += parseInt(array[i]);
+                sum += parseFloat(array[i]);
             }
-           
             var average = sum / array.length;
-            document.getElementById("average").value = average;
+            document.getElementById("average").value = average.toString();
         }
-
         document.getElementById("averageArray").addEventListener("click", addArray, false);
     </script>
 
     <script>
-
+    
         var array = [];
-
         function addToArray() {
-            let value = document.getElementById("newValue").value;
+            let value = parseFloat(document.getElementById("newValue").value);
             if (!isNaN(value)) {
                 array.push(value);
                 document.getElementById("arrayList").value = array.toString();
@@ -120,12 +116,10 @@
             }
             document.getElementById("newValue").value = "";
         }
-
         function clearArray() {
             array = [];
             document.getElementById("arrayList").value = "Array is Empty";
         }
-
         document.getElementById("addToArray").addEventListener("click", addToArray, false);
         document.getElementById("clearArray").addEventListener("click", clearArray, false);
     </script>

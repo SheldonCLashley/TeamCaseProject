@@ -82,22 +82,24 @@
                 <label>Array Values:</label>
                 <input type="text" name="arrayList" id="arrayList", value="Array is Empty"><br>
 
-                <input type="button" name="averageArray" id="averageArray" value="Calcualte Array Average"><br>
+                <input type="button" name="averageArray" id="averageArray" value="Calcualte Array Average" readonly><br>
 
                 <label>Avarage Value:</label>
-                <input type="number" name="average" id="average">
+                <input type="number" name="average" id="average" readonly>
             </form>
         </div>
     </div>
 
     
     <script type = "text/javascript" language="javascript">
-        function addArray(myArray){
+        function addArray(){
             var sum = 0;
-            for (var i = 0; i < myArray.length; i++){
-                sum += parseInt(myArray[i]);
+
+            for (var i = 0; i < array.length; i++){
+                sum += parseInt(array[i]);
             }
-            var average = sum / myArray.length;
+           
+            var average = sum / array.length;
             document.getElementById("average").value = average;
         }
 

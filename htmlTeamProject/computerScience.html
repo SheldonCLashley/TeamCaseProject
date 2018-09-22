@@ -75,14 +75,34 @@
             <form>
                 <label>Input Value:</label>
                 <input type="number" name="newValue" id="newValue"><br>
+
                 <input type="button" name="addToArray" id="addToArray" value="Add Value to Array">
-                <input type="button" name="clearArray" id="clearArray" value="Clear Array">
+                <input type="button" name="clearArray" id="clearArray" value="Clear Array"><br>
+
+                <label>Array Values:</label>
+                <input type="text" name="arrayList" id="arrayList", value="Array is Empty"><br>
+
                 <input type="button" name="averageArray" id="averageArray" value="Calcualte Array Average"><br>
+
                 <label>Avarage Value:</label>
-                <input type="number" name="avergae" id="avarage">
+                <input type="number" name="average" id="average">
             </form>
         </div>
     </div>
+
+    
+    <script type = "text/javascript" language="javascript">
+        function addArray(myArray){
+            var sum = 0;
+            for (var i = 0; i < myArray.length; i++){
+                sum += parseInt(myArray[i]);
+            }
+            var average = sum / myArray.length;
+            document.getElementById("average").value = average;
+        }
+
+        document.getElementById("averageArray").addEventListener("click", addArray, false);
+    </script>
 
     <script>
 
@@ -90,8 +110,9 @@
 
         function addToArray() {
             let value = document.getElementById("newValue").value;
-            if (typeof value == typeof 123) {
+            if (!isNaN(value)) {
                 array.push(value);
+                document.getElementById("arrayList").value = array.toString();
             } else {
                 alert("Input box is empty or contains a non-number, Please enter a number.")
             }
@@ -100,6 +121,7 @@
 
         function clearArray() {
             array = [];
+            document.getElementById("arrayList").value = "Array is Empty";
         }
 
         document.getElementById("addToArray").addEventListener("click", addToArray, false);

@@ -1,0 +1,118 @@
+<!--
+    Authors: Sheldon Lashley and Zachary Baker
+    Date: 9/09/18
+    Project: Team Case Project
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Team Case Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <script src="modernizr.custom.05819.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav id="mainBar">
+            <ul>
+                <!--The id active gives the active tab a distinct look-->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="salary.html">Salaries</a></li>
+                <li id="active"><a href="computerScience.html">The Science</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <p>
+            Nunc faucibus turpis et eros tristique euismod. Cras finibus magna nulla,
+            non lobortis nibh tincidunt non. Nullam porttitor laoreet justo, ut rhoncus
+            velit viverra in. Sed vestibulum hendrerit imperdiet. Ut quis sagittis elit.
+            Nunc fermentum neque eu nisi consectetur commodo. Sed euismod venenatis lacus non
+            tempor. Etiam scelerisque metus eu turpis suscipit, non elementum ex ullamcorper.
+            Nulla facilisi. Donec posuere consectetur convallis.
+        </p>
+
+        <p>
+            Fusce faucibus convallis consectetur. Nulla eu mauris interdum, rutrum nunc et,
+            sollicitudin magna. Suspendisse quis finibus lacus. Donec quis augue ut lacus efficitur
+            viverra. Nulla commodo arcu ut ullamcorper vulputate. Proin vitae elit vel sapien maximus
+            accumsan non accumsan odio. In ac bibendum sapien. Phasellus in purus id lorem pharetra
+            tincidunt sed ut lorem. Cras quis tortor at ante venenatis volutpat. Maecenas auctor tempus
+            commodo. Suspendisse vel accumsan nulla.
+        </p>
+        <img class="floatLeft" src="images/engineer.png" alt="engineer" />
+        <p>
+            One of the most alluring factors to a Computer Science degree is the salary.According to Glassdoor.Com,
+            the average Salary for a software developer is $110,000 per year. While this may seem decent depending on
+            workplace you can make up to double that. An average entry level position can often make $63,000 to begin with.
+            Computer Science Majors are some of the highest paid salaries for their discipline.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor leo in finibus auctor. Morbi finibus gravida ipsum vitae
+            maximus. Nunc leo turpis, finibus ut leo vel, scelerisque rhoncus diam. Nullam tincidunt pharetra eros non efficitur. Aliquam
+            efficitur sagittis velit et hendrerit. Maecenas eget lobortis risus, at aliquam ipsum. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. In lacinia ac leo id sodales.
+        </p>
+
+        <p>
+            Quisque vehicula tortor massa, eu euismod mauris imperdiet ut. Donec non tortor orci. Nam et arcu a ex eleifend euismod in a libero.
+            Etiam laoreet orci et turpis sollicitudin, a commodo tellus vulputate. Fusce fermentum metus nec velit finibus, eget sodales enim interdum.
+            Suspendisse sed felis est. Donec auctor pharetra felis, ac egestas enim feugiat vel. Aliquam venenatis blandit enim non vulputate. Fusce
+            ultrices porta metus vel malesuada. Nunc ullamcorper semper ante, vel congue dui molestie vitae. Integer vulputate sapien porta, vehicula ante eu,
+            laoreet nisl.
+        </p>
+
+        <div class="codedemo">
+            <h1>What you can build with Code</h1>
+            <p> The following demo shoes something that you could build with code, it calculates a rolling average as you add values to an array.</p>
+            <form>
+                <label>Input Value:</label>
+                <input type="number" name="newValue" id="newValue"><br>
+                <label>All Values:</label>
+                <input type="text" name="allValues" id="allValues"><br>
+                <input type="button" name="addToArray" id="addToArray" value="Add Value to Array">
+                <input type="button" name="clearArray" id="clearArray" value="Clear Array">
+                <input type="button" name="averageArray" id="averageArray" value="Calcualte Array Average"><br>
+                <label>Avarage Value:</label>
+                <input type="number" name="avergae" id="avarage">
+            </form>
+        </div>
+    </div>
+
+    
+    <script type = "text/javascript" language="javascript">
+        function addArray(myArray){
+            var sum = 0;
+            for (var i = 0; i < myArray.length; i++){
+                sum += parseInt(myArray[i]);
+            }
+        }
+
+        document.getElementById("averageArray").addEventListener("click", addArray);
+    </script>
+
+    <script>
+        var array = [];
+     function addToArray() {
+           let value = document.getElementById("newValue").value;
+           if (typeof value == typeof 'number') {
+               array.push(value);
+               
+            } else {
+            alert("Input box is empty or contains a non-number, Please enter a number.")
+           }
+          document.getElementById("newValue").value = "";
+         }
+        function clearArray() {
+            array = [];
+         }
+     document.getElementById("addToArray").addEventListener("click", addToArray, false);
+     document.getElementById("clearArray").addEventListener("click", clearArray, false);
+</script>
+
+</body>
+</html>

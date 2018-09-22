@@ -65,6 +65,45 @@
             ultrices porta metus vel malesuada. Nunc ullamcorper semper ante, vel congue dui molestie vitae. Integer vulputate sapien porta, vehicula ante eu,
             laoreet nisl.
         </p>
+
+        <div class="codedemo">
+
+            <h1>What you can build with Code</h1>
+
+            <p> The following demo shoes something that you could build with code, it calculates a rolling average as you add values to an array.</p>
+
+            <form>
+                <label>Input Value:</label>
+                <input type="number" name="newValue" id="newValue"><br>
+                <input type="button" name="addToArray" id="addToArray" value="Add Value to Array">
+                <input type="button" name="clearArray" id="clearArray" value="Clear Array">
+                <input type="button" name="averageArray" id="averageArray" value="Calcualte Array Average"><br>
+                <label>Avarage Value:</label>
+                <input type="number" name="avergae" id="avarage">
+            </form>
+        </div>
     </div>
+
+    <script>
+
+        var array = [];
+
+        function addToArray() {
+            let value = document.getElementById("newValue").value;
+            if (typeof value == typeof 123) {
+                array.push(value);
+            } else {
+                alert("Input box is empty or contains a non-number, Please enter a number.")
+            }
+            document.getElementById("newValue").value = "";
+        }
+
+        function clearArray() {
+            array = [];
+        }
+
+        document.getElementById("addToArray").addEventListener("click", addToArray, false);
+        document.getElementById("clearArray").addEventListener("click", clearArray, false);
+    </script>
 </body>
 </html>
